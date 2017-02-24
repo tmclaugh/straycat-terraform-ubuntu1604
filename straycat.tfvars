@@ -5,7 +5,7 @@ terragrunt = {
     config {
       encrypt = "true"
       bucket  = "straycat.dhs.org-straycat-terraform"
-      key     = "ubuntu1404.tfstate"
+      key     = "ubuntu1604.tfstate"
       region  = "us-east-1"
     }
   }
@@ -20,9 +20,9 @@ aws_profile             = "straycat"
 aws_region              = "us-east-1"
 instance_key_name       = "straycat-tmclaugh-threatstack"
 
-svc_name = "ubuntu1404"
-ami_id = "ami-a95044be"
-instance_type = "t1.micro"
+svc_name = "ubuntu1604"
+ami_id = "ami-2c57433b"
+instance_type = "t2.micro"
 
 asg_min_size            = 1
 asg_max_size            = 1
