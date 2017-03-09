@@ -37,13 +37,5 @@ security_group_service_ingress = {
   cidr_block = "0.0.0.0/0"
 }
 
-# We control what this bastion is able to tack to from here.
-security_group_access = "all"
-security_group_default_ingress = {
-  from_port             = 22
-  to_port               = 22
-  protocol              = "tcp"
-}
-
 # Does not yet work.
 github_organization     = "tmclaugh"

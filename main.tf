@@ -15,9 +15,7 @@ variable "asg_min_size" {}
 variable "asg_max_size" {}
 variable "asg_desired_capacity" {}
 variable "subnet_type" {}
-variable "security_group_access" {}
 variable "security_group_service_ingress" { type = "map" }
-variable "security_group_default_ingress" { type = "map" }
 
 
 // Setup AWS provider
@@ -60,15 +58,6 @@ module "svc" {
   instance_key_name     = "${var.instance_key_name}"
   ami_id                = "${var.ami_id}"
   security_group_service_ingress_external = "${var.security_group_service_ingress}"
-}
-
-resource "aws_security_group_rule" "svc_ssh_ingress" {
-  type                      = "ingress"
-  from_port                 = "${var.security_group_default_ingress["from_port"]}"
-  to_port                   = "${var.security_group_default_ingress["to_port"]}"
-  protocol                  = "${var.security_group_default_ingress["protocol"]}"
-  source_security_group_id  = "${module.svc.security_group_id}"
-  security_group_id         = "${data.terraform_remote_state.aws_vpc.vpc.default_security_group_ids[var.security_group_access]}"
 }
 
 /*
