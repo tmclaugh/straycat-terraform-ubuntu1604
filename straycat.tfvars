@@ -4,7 +4,7 @@ terragrunt = {
     backend = "s3"
     config {
       encrypt = "true"
-      bucket  = "straycat.dhs.org-straycat-terraform"
+      bucket  = "straycat-dhs-org-straycat-terraform"
       key     = "ubuntu1604.tfstate"
       region  = "us-east-1"
     }
@@ -14,7 +14,7 @@ terragrunt = {
 /*
 * aws vars for Terraform
 */
-domain                  = "straycat.dhs.org"
+aws_s3_prefix           = "straycat-dhs-org"
 aws_account             = "straycat"
 aws_profile             = "straycat"    # AWS credentials profile name
 aws_region              = "us-east-1"

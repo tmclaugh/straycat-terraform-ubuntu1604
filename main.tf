@@ -6,11 +6,11 @@
 variable "svc_name" {}
 variable "ami_id" {}
 variable "instance_type" {}
-variable "domain" {}
 variable "instance_key_name" {}
 variable "aws_account" {}
 variable "aws_profile" {}
 variable "aws_region" {}
+variable "aws_s3_prefix" {}
 variable "asg_min_size" {}
 variable "asg_max_size" {}
 variable "asg_desired_capacity" {}
@@ -38,7 +38,7 @@ provider "github" {
 data "terraform_remote_state" "aws_vpc" {
   backend = "s3"
   config = {
-    bucket  = "${var.domain}-${var.aws_account}-terraform"
+    bucket  = "${var.aws_s3_prefix}-${var.aws_account}-terraform"
     key     = "aws_vpc.tfstate"
     region  = "${var.aws_region}"
   }
