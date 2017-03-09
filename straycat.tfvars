@@ -24,9 +24,9 @@ svc_name = "ubuntu1604"
 ami_id = "ami-2c57433b"
 instance_type = "t2.micro"
 
-asg_min_size            = 1
-asg_max_size            = 1
-asg_desired_capacity    = 1
+asg_min_size            = 0
+asg_max_size            = 0
+asg_desired_capacity    = 0
 
 subnet_type = "public"
 
