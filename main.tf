@@ -6,7 +6,6 @@
 variable "svc_name" {}
 variable "ami_id" {}
 variable "instance_type" {}
-variable "instance_key_name" {}
 variable "aws_account" {}
 variable "aws_profile" {}
 variable "aws_region" {}
@@ -55,7 +54,6 @@ module "svc" {
   asg_min_size          = "${var.asg_min_size}"
   asg_max_size          = "${var.asg_max_size}"
   asg_desired_capacity  = "${var.asg_desired_capacity}"
-  instance_key_name     = "${var.instance_key_name}"
   ami_id                = "${var.ami_id}"
   security_group_service_ingress_external = "${var.security_group_service_ingress}"
 }

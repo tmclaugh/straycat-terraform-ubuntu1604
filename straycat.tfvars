@@ -18,7 +18,6 @@ aws_s3_prefix           = "straycat-dhs-org"
 aws_account             = "straycat"
 aws_profile             = "straycat"    # AWS credentials profile name
 aws_region              = "us-east-1"
-instance_key_name       = "straycat-tmclaugh-threatstack"
 
 svc_name = "ubuntu1604"
 ami_id = "ami-2c57433b"
